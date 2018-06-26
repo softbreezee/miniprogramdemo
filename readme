@@ -1,0 +1,13 @@
+springboot开发微信小程序，参照imooc翔仔课程
+微信小程序post提交之坑
+关于POST请求的一些坑
+1.若普通方式传参,queryString格式，即k=v&k=v与get相同，但是一个在请求体，一个在url中包含
+ data: {'id':e.target.dataset.id}, 
+ header: { 
+  "content-type": "application/x-www-form-urlencoded" 
+ }, 
+2.若JSON方式传参，后端controller的参数名要加上@RequestBody注解
+ data: JSON.stringify(formData), 
+ header: { 
+  "content-type": "application/json" 
+ }, 
